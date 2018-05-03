@@ -5,12 +5,17 @@ class List extends Component {
     render(){
         return (
             <div>
-                <ul>
+                
                   {this.props.tasks.map((item, index) => {
-                    return <li key={index}>{ item } <button onClick={()=>this.props.delete(index)}>Удалить</button></li> ;
+                    return (<div key={index} class="card" style={{marginBottom:"5px"}}>
+                    <div className="card-body">
+                      <h5 class="card-title">{item.title}</h5>
+                      <p class="card-text">{item.description}</p>
+                    </div>
+                  </div> );
             
                   })}
-                </ul>
+                
             </div> 
         );
     }

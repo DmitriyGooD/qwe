@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+//import logo from './logo.svg';
+import '../node_modules/bootstrap/dist/css/bootstrap.css';
 import Form from './Form.js';
 import List from './List.js';
 
@@ -18,16 +18,19 @@ class App extends Component {
     tasks.splice(id, 1);
     this.setState({ tasks });
   }
+  
   render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to Test</h1>
-        </header>
-        <Form update={this.handleInput} />
-        <List tasks={this.state.tasks} delete={this.handleDelete}/>
-      </div>
+     
+    return ( 
+        <div className="row">
+    <div className="col-sm-3 offset-sm-3">
+    <Form update={this.handleInput} />
+    </div>
+    <div className="col-sm-3">
+    <List tasks={this.state.tasks} delete={this.handleDelete}/> 
+    </div>
+    </div>    
+      
     );
   }
 }

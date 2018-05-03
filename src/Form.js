@@ -2,13 +2,22 @@ import React, { Component } from 'react';
 
 class Form extends Component {
     state = {
-        value: "yyy"
+        title: "",
+        description:""
     }
+    
     render(){
         return (
-            <div>
-                <input value={this.state.value} onChange={(e) => this.setState({ value: e.target.value})}></input>
-                <button onClick={() => this.props.update(this.state.value)}>Добавить </button>
+            <div >
+               <div className="form-group">
+                <input className="form-control" value={this.state.title} onChange={(e) => this.setState({ title: e.target.value})}></input>
+                </div>
+                <div className="form-group">
+                <textarea className="form-control" value={this.state.description} onChange={(e) => this.setState({ description: e.target.value})}></textarea>
+                </div>
+                <div className="form-group">
+                <button className="btn btn-primary" onClick={() => this.props.update({title:this.state.title,description:this.state.description})}>Добавить </button>
+                </div>
             </div> 
         );
     }
