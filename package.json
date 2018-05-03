@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "bootstrap": "^4.1.1",
+    "json-server": "^0.12.2",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
     "react-scripts": "1.1.4"
@@ -12,6 +13,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
-  }
+    "eject": "react-scripts eject",
+    "start-db": "node ./node_modules/json-server/bin/index.js -p 3001 ./db/base.json"
+  },
+  "proxy":"http://localhost:3001"
 }
