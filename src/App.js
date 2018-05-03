@@ -8,6 +8,19 @@ class App extends Component {
   state={ 
     tasks:[]
   } 
+
+  componentDidMount(){
+    this.getdata();
+  }
+  getdata=() =>{
+    fetch("http://localhost:3001/tasks")
+    .then(response=>{
+      return response.json(); 
+    })
+    .then(result => this.setState({ tasks:result })) 
+    .catch(error=>console.log(error))
+  }
+
   handleInput = (data) => {
     let tasks = [ ...this.state.tasks ];
     tasks.push(data);
