@@ -16,5 +16,9 @@
     "eject": "react-scripts eject",
     "start-db": "node ./node_modules/json-server/bin/index.js -p 3001 ./db/base.json"
   },
-  "proxy":"http://localhost:3001"
+  "proxy":{
+    "/api":{
+      "target": "http://localhost:3001"
+    }
+}
 }
